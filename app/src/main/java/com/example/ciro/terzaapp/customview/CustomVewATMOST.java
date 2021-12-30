@@ -3,18 +3,17 @@ package com.example.ciro.terzaapp.customview;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-public class CustomVew extends View {
+public class CustomVewATMOST extends View {
     Paint paint;
     int DEFAULT_SIZE=1500;
-    public CustomVew(Context context,  AttributeSet attrs) {
+    public CustomVewATMOST(Context context, AttributeSet attrs) {
         super(context, attrs);
         paint=new Paint();
-        paint.setColor(0xffc0ff00);
+        paint.setColor(0xffc0ffff);
         paint.setStyle(Paint.Style.FILL); //riempi tutta la finestra con il colore
         paint.setTextSize(55);
 
@@ -48,7 +47,7 @@ public class CustomVew extends View {
 
         setMeasuredDimension(width, height);
 
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
     }
     public final int dpToPixels(int dp) {
         return (int) (dp * getResources().getDisplayMetrics().density + 0.5);
@@ -67,9 +66,9 @@ public class CustomVew extends View {
 
         canvas.drawRect(0,0,getWidth(),getHeight(),paint);
         paint.setColor(0xff00f3c0);
-        canvas.drawText("MeasureSpec.EXACTLY ",10,55,paint);
+        canvas.drawText("MeasureSpec.AT_MOST perchè l'altezza ",10,55,paint);
 
-
+        canvas.drawText(" è wrapcontent",10,110,paint);
     }
 
 }
