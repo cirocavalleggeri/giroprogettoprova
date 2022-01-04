@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayoutt xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityCustomViewParametri">
+    <ScrollView
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <com.example.ciro.terzaapp.customview.CustomVewParametri
+                android:id="@+id/customUnspecified"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fillColor="@android:color/holo_blue_dark"
+                app:frase="frase di benvenuto da layout"
+                >
+            </com.example.ciro.terzaapp.customview.CustomVewParametri>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayoutt>

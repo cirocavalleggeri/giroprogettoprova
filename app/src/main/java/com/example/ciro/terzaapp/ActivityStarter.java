@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 public class ActivityStarter extends ListActivity {
     String nomeActivity[] = { "MainActivity",
-            "CustomViewTextView", "CustomView2" };
+            "CustomViewTextView", "ActivityCustomViewParametri" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

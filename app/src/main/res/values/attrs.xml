@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomViewParametrizzata">
+        <attr name="fillColor" format="color"/>
+        <attr name="risposta" format="boolean"/>
+        <attr name="numerofloat" format="float"/>
+        <attr name="dimensione" format="dimension"/>
+        <attr name="frase" format="string"/>
+        <attr name="risorsa" format="reference"/>
+    </declare-styleable>
+
+</resources>
