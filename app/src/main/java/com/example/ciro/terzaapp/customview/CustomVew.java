@@ -10,13 +10,22 @@ import android.view.View;
 
 public class CustomVew extends View {
     Paint paint;
-    int DEFAULT_SIZE=1500;
+    int DEFAULT_SIZE=500;
     public CustomVew(Context context,  AttributeSet attrs) {
         super(context, attrs);
         paint=new Paint();
         paint.setColor(0xffc0ff00);
         paint.setStyle(Paint.Style.FILL); //riempi tutta la finestra con il colore
         paint.setTextSize(55);
+
+
+    }
+    public CustomVew(Context context) {
+     this(context,null);
+       /* paint=new Paint();
+        paint.setColor(0xffc0ff00);
+        paint.setStyle(Paint.Style.FILL); //riempi tutta la finestra con il colore
+        paint.setTextSize(55);*/
 
 
     }
@@ -48,7 +57,7 @@ public class CustomVew extends View {
 
         setMeasuredDimension(width, height);
 
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+       // super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
     public final int dpToPixels(int dp) {
         return (int) (dp * getResources().getDisplayMetrics().density + 0.5);
@@ -59,16 +68,18 @@ public class CustomVew extends View {
     }
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-
-
-
-
-
+       /* super.onDraw(canvas);
         canvas.drawRect(0,0,getWidth(),getHeight(),paint);
         paint.setColor(0xff00f3c0);
-        canvas.drawText("MeasureSpec.EXACTLY ",10,55,paint);
+        canvas.drawText("MeasureSpec.EXACTLY ",10,55,paint);*/
+        int leftX = getPaddingLeft();
+        int rightX = getWidth() - getPaddingLeft() - getPaddingRight();
 
+        int topY = getPaddingTop();
+        int bottomY = getHeight() - getPaddingTop() - getPaddingBottom();
+
+        canvas.drawRect(leftX, topY, rightX, bottomY, paint);
+        super.onDraw(canvas);
 
     }
 
