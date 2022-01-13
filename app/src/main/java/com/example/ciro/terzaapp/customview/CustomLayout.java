@@ -37,11 +37,13 @@ public class CustomLayout extends ViewGroup {
           //controlliamo la larghezza della riga:
           if(lato_sinistro+finestraFiglioLarghezza<r-getPaddingRight()){
               finestraFiglio.layout(lato_sinistro,lato_in_alto_a_sinistra,lato_sinistro+finestraFiglioLarghezza,lato_in_alto_a_sinistra+finestraFiglioAltezza);
+              lato_sinistro=lato_sinistro+finestraFiglioLarghezza;
 
           }else { lato_sinistro=l+getPaddingLeft();
                   lato_in_alto_a_sinistra=lato_in_alto_a_sinistra+altezzaRiga;
-                  finestraFiglio.layout(lato_sinistro,lato_in_alto_a_sinistra,finestraFiglioLarghezza,lato_in_alto_a_sinistra+finestraFiglioAltezza);
-
+                  finestraFiglio.layout(lato_sinistro,lato_in_alto_a_sinistra,lato_sinistro+finestraFiglioLarghezza,lato_in_alto_a_sinistra+finestraFiglioAltezza);
+                  altezzaRiga=0;
+                  lato_sinistro=lato_sinistro+finestraFiglioLarghezza;
           }
           //l'altezza della riga del contenitore è il massimo delle altezze delle finestre figlio
           if(finestraFiglioAltezza>altezzaRiga){altezzaRiga=finestraFiglioAltezza;}
@@ -58,7 +60,7 @@ public class CustomLayout extends ViewGroup {
         if(getWidth() == 0) {
             Log.d("VIEW","onMesure getWidth():"+getWidth());
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-            return;
+           // return;
         }
         int numero_di_finestre_contenute=getChildCount();
         Log.d("VIEW","onMeasure numero_di_finestre_contenute:"+numero_di_finestre_contenute);
@@ -71,6 +73,7 @@ public class CustomLayout extends ViewGroup {
         //iteriamo le finestre interne
         for(int i=0;i<numero_di_finestre_contenute;i++){
             View singola_finestra_interna=getChildAt(i);
+            measureChild(singola_finestra_interna, widthMeasureSpec, heightMeasureSpec);
             //ricaviamoci le dimensioni della finestra soprastante
             int finestraFiglioAltezza=singola_finestra_interna.getMeasuredHeight();
             int finestraFiglioLarghezza=singola_finestra_interna.getMeasuredWidth();
@@ -108,5 +111,8 @@ public class CustomLayout extends ViewGroup {
             default:
                 return desired;
         }
+    }
+    public void ridisegna(){
+        invalidate();
     }
 }

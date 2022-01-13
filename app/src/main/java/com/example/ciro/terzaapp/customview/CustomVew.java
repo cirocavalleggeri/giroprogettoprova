@@ -11,12 +11,24 @@ import android.view.View;
 public class CustomVew extends View {
     Paint paint;
     int DEFAULT_SIZE=500;
+    int DEFAULT_COLOR_TEXT=0xffff0000;
+    int DEFAULT_COLOR=0xffc0ff00;
+    public String getTesto() {
+        return testo;
+    }
+
+    public void setTesto(String testo) {
+        this.testo = testo;
+    }
+
+    String testo=" ";
     public CustomVew(Context context,  AttributeSet attrs) {
         super(context, attrs);
         paint=new Paint();
         paint.setColor(0xffc0ff00);
         paint.setStyle(Paint.Style.FILL); //riempi tutta la finestra con il colore
-        paint.setTextSize(55);
+        paint.setTextSize(34);
+
 
 
     }
@@ -77,8 +89,10 @@ public class CustomVew extends View {
 
         int topY = getPaddingTop();
         int bottomY = getHeight() - getPaddingTop() - getPaddingBottom();
-
+         paint.setColor(DEFAULT_COLOR);
         canvas.drawRect(leftX, topY, rightX, bottomY, paint);
+        paint.setColor(DEFAULT_COLOR_TEXT);
+        canvas.drawText(getTesto(),(leftX+rightX)/2,(topY+bottomY)/2,paint);
         super.onDraw(canvas);
 
     }

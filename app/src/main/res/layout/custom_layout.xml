@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <com.example.ciro.terzaapp.customview.CustomLayout
         android:layout_width="match_parent"
-        android:layout_height="161dp"
+        android:layout_height="wrap_content"
         android:id="@+id/id_custom_layout"
         >
     </com.example.ciro.terzaapp.customview.CustomLayout>
-
+    </ScrollView>
 
 
 </LinearLayout>
