@@ -9,18 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CustomLayoutActivity"
-            android:label="CustomLaoutActivity"
-            ></activity>
-        <activity android:name=".ActivityCustomViewParametri"
-            android:label="ActivityCustomViewParametri"
-            />
-        <activity android:name=".CustomViewTextView"
-            android:label="CustomViewTextView">
-        </activity>
-        <activity android:name=".ActivityStarter"
-            android:label="ActivityStarter"
-            >
+        <activity android:name=".ActivityCircularDraw"></activity>
+        <activity
+            android:name=".CustomLayoutActivity"
+            android:label="CustomLaoutActivity" />
+        <activity
+            android:name=".ActivityCustomViewParametri"
+            android:label="ActivityCustomViewParametri" />
+        <activity
+            android:name=".CustomViewTextView"
+            android:label="CustomViewTextView"></activity>
+        <activity
+            android:name=".ActivityStarter"
+            android:label="ActivityStarter">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
