@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityCircularDraw"></activity>
+        <activity android:name=".ActivityDraw"></activity>
+        <activity android:name=".ActivityCustomCircularDrawArcPath" />
+        <activity android:name=".ActivityCircularDrawArc1" />
+        <activity android:name=".ActivityCircularDraw" />
         <activity
             android:name=".CustomLayoutActivity"
             android:label="CustomLaoutActivity" />
@@ -18,7 +21,7 @@
             android:label="ActivityCustomViewParametri" />
         <activity
             android:name=".CustomViewTextView"
-            android:label="CustomViewTextView"></activity>
+            android:label="CustomViewTextView" />
         <activity
             android:name=".ActivityStarter"
             android:label="ActivityStarter">

@@ -9,7 +9,8 @@ import android.widget.ListView;
 
 public class ActivityStarter extends ListActivity {
     String nomeActivity[] = { "MainActivity",
-            "CustomViewTextView", "ActivityCustomViewParametri","CustomLayoutActivity","ActivityCircularDraw" };
+            "CustomViewTextView", "ActivityCustomViewParametri","CustomLayoutActivity","ActivityCircularDraw" ,"ActivityCircularDrawArc1","ActivityCustomCircularDrawArcPath","ActivityDraw" +
+            ""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
